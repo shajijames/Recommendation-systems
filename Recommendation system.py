@@ -8,8 +8,12 @@ Created on Sat Jan 12 05:46:41 2019
 # =============================================================================
 # Content based Filtering
 # =============================================================================
+# =============================================================================
+# Dataset link - https://www.kaggle.com/rounakbanik/the-movies-dataset/version/7
+# Download movies_metadata.csv
+# =============================================================================
 import pandas as pd
-metadata = pd.read_csv(r'E:\CAIA\Datasets\Movies_metadata\movies_metadata.csv')
+metadata = pd.read_csv(r'Movies_metadata\movies_metadata.csv')
 
 #reducing data size for easy computing
 sample_metadata=metadata[:50] 
@@ -49,14 +53,17 @@ sample_metadata['title'].iloc[movie_indices]
 # =============================================================================
 # Collaberatibive filtering
 # =============================================================================
+# =============================================================================
+# Dataset link: http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip
+# =============================================================================
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-books = pd.read_csv(r'E:\CAIA\Datasets\Books Dataset\BX-Books.csv', sep=';', error_bad_lines=False, encoding="latin-1")
+books = pd.read_csv(r'Books Dataset\BX-Books.csv', sep=';', error_bad_lines=False, encoding="latin-1")
 books.columns=books.columns.str.replace(' ','').str.replace('-','').str.lower()
-users = pd.read_csv(r'E:\CAIA\Datasets\Books Dataset\BX-Users.csv', sep=';', error_bad_lines=False, encoding="latin-1")
+users = pd.read_csv(r'\Books Dataset\BX-Users.csv', sep=';', error_bad_lines=False, encoding="latin-1")
 users.columns=users.columns.str.replace(' ','').str.replace('-','').str.lower()
-ratings = pd.read_csv(r'E:\CAIA\Datasets\Books Dataset\BX-Book-Ratings.csv', sep=';', error_bad_lines=False, encoding="latin-1")
+ratings = pd.read_csv(r'Books Dataset\BX-Book-Ratings.csv', sep=';', error_bad_lines=False, encoding="latin-1")
 ratings.columns=ratings.columns.str.replace(' ','').str.replace('-','').str.lower()
 
 #user based
